@@ -46,6 +46,9 @@ public class Bank {
         }
     }
 
+    // 我们当然可以采用 ReentrantReadWriteLock 锁（读/写锁）替代 ReentrantLock 锁
+    // 然后分别抽取读锁和写锁用于 getTotalBalance() 方法和 transfer() 方法
+    // 但这在这个例子中没有太大的意义，因为每个线程都会执行“写”操作
     public double getTotalBalance() {
         bankLock.lock();
         try{
