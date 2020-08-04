@@ -102,6 +102,7 @@ class MatchCounter implements Callable<Integer> {
         return count;
     }
 
+    // 有问题，没有考虑 IOException
     private boolean search(File file, String keyword) throws Exception{
         boolean contains = false;
         Scanner in = new Scanner(file, "UTF-8");
